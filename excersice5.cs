@@ -39,6 +39,10 @@ namespace Rextester
 			Console.WriteLine("Sol : " + HasPath(root, sum ) );
         }
 
+        /*
+            Time Complexity: O(2^n)
+            Space Complexity: O(n)
+        */
         public static bool HasPath( TreeNode node, int sum ) {
         	if( node == null ) {
         		return false;

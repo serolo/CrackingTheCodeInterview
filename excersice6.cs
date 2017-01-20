@@ -44,6 +44,10 @@ namespace Rextester
 			Console.WriteLine("Sol Lineal: " + LinealSolution(numbers, sum ) );
         }
 
+        /*
+            Time Complexity: O(n^2)
+            Space Complexity: O(1)
+        */
         public static bool QuadraticSolution( int[] numbers, int sum ) {
         	for( int i=0 ; i<numbers.Length; i++ ) {
         		for( int j=0 ; j<numbers.Length; j++ ) {
@@ -57,6 +61,10 @@ namespace Rextester
         	return false;
         }
 
+        /*
+            Time Complexity: O(n)
+            Space Complexity: O(3)
+        */
         public static bool LinealSolution( int[] numbers, int sum ) {
         	Sort sort = new Sort();
         	sort.MergeRecursive( numbers, 0, numbers.Length-1 );
@@ -113,6 +121,10 @@ namespace Rextester
                          
         }
         
+        /*
+            Time Complexity: O(n log n)
+            Space Complexity: O(log n)
+        */
         public void MergeRecursive( int[] a, int lo, int hi )
         {
             if( hi > lo ) {
