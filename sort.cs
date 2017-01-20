@@ -125,8 +125,11 @@ namespace Rextester
         public void MergeBottomUp( int[] a ) 
         {
             int lenght = a.Length;
-            for( int i=1; i<lenght; i=i*2 ) {
-                for( int j=0; j<
+            int[] comparable = new int[lenght];
+            for( int sz=1 ; sz<lenght ; sz = 2*sz ) {
+            	for( int lo=0 ; lo<lenght-sz; lo += sz+sz ) {
+            		Merge( a, lo, lo+sz-1, Math.Min(lo+sz+sz-1, lenght-1) );
+            	}
             }
         }
         
